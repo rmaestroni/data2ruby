@@ -57,6 +57,10 @@ RSpec.describe Data2ruby do
         expect(instance.item.attr1).to eq('value')
         expect(instance.item.subitems[0].attr2).to eq('value')
       end
+
+      it 'includes ActiveModel::Model' do
+        expect(instance.item.class).to be_include(ActiveModel::Model)
+      end
     end
 
     describe 'validation' do
